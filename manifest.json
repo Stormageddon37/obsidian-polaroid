@@ -3,7 +3,7 @@
 	"name": "Polaroid",
 	"version": "1.0.0",
 	"minAppVersion": "1.5.0",
-	"description": "Polaroid-style image frames with handwritten captions",
+	"description": "Transform embedded images into polaroid-style frames with handwritten captions.",
 	"author": "bresler",
 	"isDesktopOnly": false
 }
