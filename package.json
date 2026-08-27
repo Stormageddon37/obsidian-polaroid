@@ -1,6 +1,6 @@
 {
 	"name": "polaroid",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Polaroid-style image frames with handwritten captions for Obsidian",
 	"main": "main.js",
 	"type": "module",
