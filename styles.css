@@ -1,0 +1,92 @@
+/* === Obsidian Polaroid — Polaroid-style image frames === */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+/* ============================================
+   IMAGES — Polaroid Evidence Board
+   ============================================ */
+
+/* Image container — polaroid frame + rotation on container so caption rotates too */
+.markdown-rendered .image-embed {
+  position: relative;
+  display: block;
+  text-align: center;
+  max-width: 80%;
+  margin: 24px auto;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f0ead6;
+  padding: 12px 12px 48px 12px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Image inside polaroid — flush, no extra border */
+.markdown-rendered .image-embed img {
+  display: block;
+  width: 100%;
+  filter: sepia(15%) contrast(1.05);
+  margin: 0;
+  border: none;
+}
+
+/* Slight rotation cycling on container */
+.markdown-rendered .image-embed:nth-child(5n+1) {
+  transform: rotate(-2deg);
+}
+
+.markdown-rendered .image-embed:nth-child(5n+2) {
+  transform: rotate(1.5deg);
+}
+
+.markdown-rendered .image-embed:nth-child(5n+3) {
+  transform: rotate(-1deg);
+}
+
+.markdown-rendered .image-embed:nth-child(5n+4) {
+  transform: rotate(2.5deg);
+}
+
+.markdown-rendered .image-embed:nth-child(5n+5) {
+  transform: rotate(-0.5deg);
+}
+
+/* Hover — lift and straighten entire polaroid (image + caption) */
+.markdown-rendered .image-embed:hover {
+  transform: rotate(0deg) scale(1.02) !important;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Handwritten caption — uses data-caption set by plugin JS (cleaned filename) */
+.markdown-rendered .image-embed[data-caption]::after {
+  content: attr(data-caption);
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  color: #333333;
+  text-align: center;
+  margin-top: 8px;
+  pointer-events: none;
+}
+
+/* Pinned documents — non-image embeds */
+.markdown-rendered .internal-embed:not(.image-embed) {
+  position: relative;
+  padding-top: 24px;
+  margin: 16px 0;
+}
+
+/* Red push pin on embedded notes */
+.markdown-rendered .internal-embed:not(.image-embed)::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 35% 35%, #ff5555, #cc3333 60%, #8b1a1a);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
