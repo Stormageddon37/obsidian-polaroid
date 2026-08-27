@@ -24,6 +24,8 @@ The caption is generated from the filename (stripped of extension, dashes/unders
 ![[photo.png|My vacation photo]]
 ```
 
+![Example 1](./example.png)
+
 ## Font
 
 This plugin bundles the [Caveat](https://fonts.google.com/specimen/Caveat) font (OFL license) for handwritten-style captions. See `fonts/OFL.txt` for the font license.
